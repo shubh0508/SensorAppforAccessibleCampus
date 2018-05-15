@@ -189,15 +189,16 @@ public class TimeService extends Service {
 
             //long starttime = start_time_shared;
             cal = Calendar.getInstance();
-//            //GPSTracker gps1 = new GPSTracker();
-//            Location l = gps.getLocation();
-//            double latt = l.getLatitude();
-//            double lonn = l.getLongitude();66/
-            //let heading = Math.atan2(sensor.y, sensor.x) * (180 / Math.PI);
-            //if()
             if(magnetic_field[0] != 0)
                 direction_heading = (float) (Math.atan2(magnetic_field[1],magnetic_field[0])*( 180 / Math.PI));
+
+
             int bool_dir = 1; // 1 means South
+            // Orientation[0] is the direction in degrees where the mobile is heading towards
+            // Thus it can be used to know which direction a person is walking
+            // And what would be next landmark in the way.
+            // If the map is dense then it can be discretized in 8 direction or else.
+            // At present it is set for North/ South only
             if( (orientation[0]< 160) || ( 330 < orientation[0]))
                 bool_dir = 0; // 0 means North
             arr[index] = (double) (orientation[0]);
