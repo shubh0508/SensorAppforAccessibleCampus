@@ -61,3 +61,7 @@ is an offline tts for python. The implementation and installation of pyttsx3 is 
 from the following link:
 https://github.com/nateshmbhat/pyttsx3
 
+### Application file :
+Apk file to install app without building the project.
+Install from unsecured sources option from Security and preferences has to be turned on to install apk. 
+
